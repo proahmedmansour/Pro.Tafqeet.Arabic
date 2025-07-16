@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
-using Tafqeet.Arabic.Config;
+using Pro.Tafqeet.Arabic.Config;
 
-namespace Tafqeet.Arabic.Tests
+namespace Pro.Tafqeet.Arabic.Tests
 {
     public class ArabicNumberToTextConverterTests
     {

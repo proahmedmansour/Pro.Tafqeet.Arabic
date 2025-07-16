@@ -1,4 +1,4 @@
-﻿namespace Tafqeet.Arabic.Enums
+﻿namespace Pro.Tafqeet.Arabic.Enums
 {
     public enum TafqeetLanguage
     {

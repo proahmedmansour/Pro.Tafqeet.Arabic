@@ -1,4 +1,4 @@
-# Tafqeet.Arabic
+# Pro.Tafqeet.Arabic
 
 **Tafqeet.Arabic** is a .NET library that converts numeric values to their Arabic textual representation (**تفقيط**) with full grammatical accuracy.
 
@@ -19,7 +19,7 @@
 ## 🧾 Example Usage
 
 ```csharp
-using Tafqeet.Arabic;
+using Pro.Tafqeet.Arabic;
 
 var converter = new ArabicNumberToTextConverter();
 var result = converter.Convert(1234.56m, new TafqeetOptions

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tafqeet.Arabic", "Tafqeet.Arabic\Tafqeet.Arabic.csproj", "{BE436837-F490-E427-7BF4-D01198588F94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pro.Tafqeet.Arabic", "Tafqeet.Arabic\Pro.Tafqeet.Arabic.csproj", "{BE436837-F490-E427-7BF4-D01198588F94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tafqeet.Arabic.Tests", "Tafqeet.Arabic.Tests\Tafqeet.Arabic.Tests.csproj", "{31A6B950-4C2F-832D-B39B-2C0EAB4968E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pro.Tafqeet.Arabic.Tests", "Tafqeet.Arabic.Tests\Pro.Tafqeet.Arabic.Tests.csproj", "{31A6B950-4C2F-832D-B39B-2C0EAB4968E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

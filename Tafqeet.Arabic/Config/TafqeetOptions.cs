@@ -1,4 +1,4 @@
-﻿namespace Tafqeet.Arabic.Config
+﻿namespace Pro.Tafqeet.Arabic.Config
 {
     public class TafqeetOptions
     {

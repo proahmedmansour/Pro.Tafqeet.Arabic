@@ -1,7 +1,6 @@
-﻿using Tafqeet.Arabic.Converters;
-using Tafqeet.Arabic.Enums;
+﻿using Pro.Tafqeet.Arabic.Enums;
 
-namespace Tafqeet.Arabic
+namespace Pro.Tafqeet.Arabic
 {
     public static class TafqeetConverterFactory
     {

@@ -1,8 +1,8 @@
 ﻿using Humanizer;
+using Pro.Tafqeet.Arabic.Config;
 using System.Globalization;
-using Tafqeet.Arabic.Config;
 
-namespace Tafqeet.Arabic.Converters
+namespace Pro.Tafqeet.Arabic.Converters
 {
     public class ArabicNumberToTextConverter : INumberToTextConverter
     {

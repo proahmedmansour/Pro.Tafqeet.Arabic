@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tafqeet.Arabic\Tafqeet.Arabic.csproj" />
+    <ProjectReference Include="..\Tafqeet.Arabic\Pro.Tafqeet.Arabic.csproj" />
   </ItemGroup>
 
 </Project>
