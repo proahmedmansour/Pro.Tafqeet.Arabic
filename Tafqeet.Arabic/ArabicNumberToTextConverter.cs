@@ -12,14 +12,14 @@ namespace Tafqeet.Arabic
             long wholePart = (long)Math.Floor(number);
             decimal fraction = number - wholePart;
 
-            string wholeText = ConvertNumber(wholePart, options.MainCurrency.IsFeminine);
-            string result = $"{wholeText} {GetCurrencyWord(wholePart, options.MainCurrency)}";
+            string wholeText = ShouldSuppressNumber(wholePart) ? "" : ConvertNumber(wholePart, options.MainCurrency.IsFeminine);
+            string result = FormatWithCurrency(wholeText, GetCurrencyWord(wholePart, options.MainCurrency));
 
             if (fraction > 0.00001m)
             {
                 int fractionalPart = (int)Math.Round(fraction * 100);
-                string fractionalText = ConvertNumber(fractionalPart, options.SubCurrency.IsFeminine);
-                result += $" و {fractionalText} {GetCurrencyWord(fractionalPart, options.SubCurrency)}";
+                string fractionalText = ShouldSuppressNumber(fractionalPart) ? "" : ConvertNumber(fractionalPart, options.SubCurrency.IsFeminine);
+                result += " و " + FormatWithCurrency(fractionalText, GetCurrencyWord(fractionalPart, options.SubCurrency));
             }
 
             if (options.IncludeOnlyTextSuffix)
@@ -30,8 +30,7 @@ namespace Tafqeet.Arabic
 
         private string ConvertNumber(long number, bool isFeminine)
         {
-            var culture = new CultureInfo("ar");
-            return number.ToWords(culture, isFeminine);
+            return number.ToWords(new CultureInfo("ar"), isFeminine);
         }
 
         private string GetCurrencyWord(long number, CurrencyInfo currency)
@@ -44,5 +43,18 @@ namespace Tafqeet.Arabic
                 _ => currency.Singular
             };
         }
+
+        private bool ShouldSuppressNumber(long number)
+        {
+            return number == 1 || number == 2;
+        }
+
+        private string FormatWithCurrency(string numberText, string currencyText)
+        {
+            return string.IsNullOrWhiteSpace(numberText)
+                ? currencyText
+                : $"{numberText} {currencyText}";
+        }
+
     }
 }

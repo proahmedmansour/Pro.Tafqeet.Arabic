@@ -8,8 +8,8 @@ namespace Tafqeet.Arabic.Tests
 
         [Theory]
         [InlineData(0, "صفر ريال فقط لا غير")]
-        [InlineData(1, "واحد ريال فقط لا غير")]
-        [InlineData(2, "اثنان ريالان فقط لا غير")]
+        [InlineData(1, "ريال فقط لا غير")]
+        [InlineData(2, "ريالان فقط لا غير")]
         [InlineData(3, "ثلاثة ريالات فقط لا غير")]
         [InlineData(11, "أحد عشر ريال فقط لا غير")]
         [InlineData(100, "مئة ريال فقط لا غير")]
@@ -25,10 +25,10 @@ namespace Tafqeet.Arabic.Tests
         }
 
         [Theory]
-        [InlineData(123.45, "مئة وثلاثة وعشرون ريال و خمس وأربعون هللة فقط لا غير")]
+        [InlineData(123.45, "مئة و ثلاثة و عشرون ريال و خمسة و أربعون هللة فقط لا غير")]
         [InlineData(0.5, "صفر ريال و خمسون هللة فقط لا غير")]
-        [InlineData(1.01, "واحد ريال و هللة واحدة فقط لا غير")]
-        [InlineData(2.99, "اثنان ريالان و تسعة و تسعون هللة فقط لا غير")]
+        [InlineData(1.01, "ريال و هللة فقط لا غير")]
+        [InlineData(2.99, "ريالان و تسعة و تسعون هللة فقط لا غير")]
         public void Convert_WithFractions_ShouldReturnCorrectText(decimal amount, string expected)
         {
             var result = _converter.Convert(amount, new TafqeetOptions
