@@ -1,14 +1,10 @@
 ﻿using FluentAssertions;
 using Tafqeet.Arabic.Config;
-using Tafqeet.Arabic.Converters;
-using Tafqeet.Arabic.Enums;
 
 namespace Tafqeet.Arabic.Tests
 {
     public class ArabicNumberToTextConverterTests
     {
-        private readonly ArabicNumberToTextConverter _converter = new();
-
         [Theory]
         [InlineData(0, "صفر ريال فقط لا غير")]
         [InlineData(1, "ريال فقط لا غير")]
@@ -18,7 +14,7 @@ namespace Tafqeet.Arabic.Tests
         [InlineData(100, "مئة ريال فقط لا غير")]
         public void Convert_IntegerAmounts_ShouldReturnCorrectText(decimal amount, string expected)
         {
-            var result = TafqeetConverterFactory.Create(TafqeetLanguage.Arabic).Convert(amount, new TafqeetOptions
+            var result = TafqeetConverterFactory.Create().Convert(amount, new TafqeetOptions
             {
                 MainCurrency = CurrencyRepository.SAR,
                 SubCurrency = CurrencyRepository.Halala
@@ -34,7 +30,7 @@ namespace Tafqeet.Arabic.Tests
         [InlineData(2.99, "ريالان و تسعة و تسعون هللة فقط لا غير")]
         public void Convert_WithFractions_ShouldReturnCorrectText(decimal amount, string expected)
         {
-            var result = TafqeetConverterFactory.Create(TafqeetLanguage.Arabic).Convert(amount, new TafqeetOptions
+            var result = TafqeetConverterFactory.Create().Convert(amount, new TafqeetOptions
             {
                 MainCurrency = CurrencyRepository.SAR,
                 SubCurrency = CurrencyRepository.Halala
@@ -46,7 +42,7 @@ namespace Tafqeet.Arabic.Tests
         [Fact]
         public void Convert_WithUsdCurrency_ShouldReturnCorrectText()
         {
-            var result = TafqeetConverterFactory.Create(TafqeetLanguage.Arabic).Convert(12.34m, new TafqeetOptions
+            var result = TafqeetConverterFactory.Create().Convert(12.34m, new TafqeetOptions
             {
                 MainCurrency = CurrencyRepository.USD,
                 SubCurrency = CurrencyRepository.Cent

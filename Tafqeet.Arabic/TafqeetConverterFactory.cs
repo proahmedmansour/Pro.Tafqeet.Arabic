@@ -5,7 +5,7 @@ namespace Tafqeet.Arabic
 {
     public static class TafqeetConverterFactory
     {
-        public static INumberToTextConverter Create(TafqeetLanguage language)
+        public static INumberToTextConverter Create(TafqeetLanguage language = TafqeetLanguage.Arabic)
         {
             return language switch
             {
