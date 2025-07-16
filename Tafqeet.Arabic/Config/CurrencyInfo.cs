@@ -1,4 +1,4 @@
-﻿namespace Tafqeet.Arabic
+﻿namespace Tafqeet.Arabic.Config
 {
     public class CurrencyInfo
     {

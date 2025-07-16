@@ -1,7 +1,8 @@
 ﻿using Humanizer;
 using System.Globalization;
+using Tafqeet.Arabic.Config;
 
-namespace Tafqeet.Arabic
+namespace Tafqeet.Arabic.Converters
 {
     public class ArabicNumberToTextConverter : INumberToTextConverter
     {
@@ -55,6 +56,5 @@ namespace Tafqeet.Arabic
                 ? currencyText
                 : $"{numberText} {currencyText}";
         }
-
     }
 }

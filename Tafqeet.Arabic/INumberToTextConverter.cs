@@ -1,4 +1,6 @@
-﻿namespace Tafqeet.Arabic
+﻿using Tafqeet.Arabic.Config;
+
+namespace Tafqeet.Arabic
 {
     public interface INumberToTextConverter
     {
