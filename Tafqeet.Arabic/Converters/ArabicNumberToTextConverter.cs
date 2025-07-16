@@ -1,14 +1,18 @@
 ﻿using Humanizer;
 using Pro.Tafqeet.Arabic.Config;
+using System;
 using System.Globalization;
 
 namespace Pro.Tafqeet.Arabic.Converters
 {
     public class ArabicNumberToTextConverter : INumberToTextConverter
     {
-        public string Convert(decimal number, TafqeetOptions? options = null)
+        public string Convert(decimal number, TafqeetOptions options = null)
         {
-            options ??= new TafqeetOptions();
+            if (options == null)
+            {
+                options = new TafqeetOptions();
+            }
 
             long wholePart = (long)Math.Floor(number);
             decimal fraction = number - wholePart;
@@ -36,13 +40,10 @@ namespace Pro.Tafqeet.Arabic.Converters
 
         private string GetCurrencyWord(long number, CurrencyInfo currency)
         {
-            return number switch
-            {
-                1 => currency.Singular,
-                2 => currency.Dual,
-                >= 3 and <= 10 => currency.Plural,
-                _ => currency.Singular
-            };
+            if (number == 1) return currency.Singular;
+            else if (number == 2) return currency.Dual;
+            else if (number >= 3 && number <= 10) return currency.Plural;
+            else return currency.Singular;
         }
 
         private bool ShouldSuppressNumber(long number)

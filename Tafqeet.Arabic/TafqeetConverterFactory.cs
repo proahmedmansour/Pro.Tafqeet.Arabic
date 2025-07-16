@@ -1,5 +1,6 @@
 ﻿using Pro.Tafqeet.Arabic.Converters;
 using Pro.Tafqeet.Arabic.Enums;
+using System;
 
 namespace Pro.Tafqeet.Arabic
 {
@@ -7,11 +8,14 @@ namespace Pro.Tafqeet.Arabic
     {
         public static INumberToTextConverter Create(TafqeetLanguage language = TafqeetLanguage.Arabic)
         {
-            return language switch
+            switch (language)
             {
-                TafqeetLanguage.Arabic => new ArabicNumberToTextConverter(),
-                _ => throw new NotImplementedException()
-            };
+                case TafqeetLanguage.Arabic:
+                    return new ArabicNumberToTextConverter();
+
+                default:
+                    throw new NotImplementedException();
+            }
         }
     }
 }
