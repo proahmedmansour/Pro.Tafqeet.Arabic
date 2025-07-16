@@ -1,0 +1,55 @@
+﻿using FluentAssertions;
+
+namespace Tafqeet.Arabic.Tests
+{
+    public class ArabicNumberToTextConverterTests
+    {
+        private readonly ArabicNumberToTextConverter _converter = new();
+
+        [Theory]
+        [InlineData(0, "صفر ريال فقط لا غير")]
+        [InlineData(1, "واحد ريال فقط لا غير")]
+        [InlineData(2, "اثنان ريالان فقط لا غير")]
+        [InlineData(3, "ثلاثة ريالات فقط لا غير")]
+        [InlineData(11, "أحد عشر ريال فقط لا غير")]
+        [InlineData(100, "مئة ريال فقط لا غير")]
+        public void Convert_IntegerAmounts_ShouldReturnCorrectText(decimal amount, string expected)
+        {
+            var result = _converter.Convert(amount, new TafqeetOptions
+            {
+                MainCurrency = CurrencyRepository.SAR,
+                SubCurrency = CurrencyRepository.Halala
+            });
+
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(123.45, "مئة وثلاثة وعشرون ريال و خمس وأربعون هللة فقط لا غير")]
+        [InlineData(0.5, "صفر ريال و خمسون هللة فقط لا غير")]
+        [InlineData(1.01, "واحد ريال و هللة واحدة فقط لا غير")]
+        [InlineData(2.99, "اثنان ريالان و تسعة و تسعون هللة فقط لا غير")]
+        public void Convert_WithFractions_ShouldReturnCorrectText(decimal amount, string expected)
+        {
+            var result = _converter.Convert(amount, new TafqeetOptions
+            {
+                MainCurrency = CurrencyRepository.SAR,
+                SubCurrency = CurrencyRepository.Halala
+            });
+
+            result.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Convert_WithUsdCurrency_ShouldReturnCorrectText()
+        {
+            var result = _converter.Convert(12.34m, new TafqeetOptions
+            {
+                MainCurrency = CurrencyRepository.USD,
+                SubCurrency = CurrencyRepository.Cent
+            });
+
+            result.Should().Be("اثنا عشر دولار و أربعة و ثلاثون سنت فقط لا غير");
+        }
+    }
+}

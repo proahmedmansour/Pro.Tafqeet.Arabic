@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tafqeet.Arabic", "Tafqeet.Arabic\Tafqeet.Arabic.csproj", "{BE436837-F490-E427-7BF4-D01198588F94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tafqeet.Arabic.Tests", "Tafqeet.Arabic.Tests\Tafqeet.Arabic.Tests.csproj", "{31A6B950-4C2F-832D-B39B-2C0EAB4968E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE436837-F490-E427-7BF4-D01198588F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE436837-F490-E427-7BF4-D01198588F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE436837-F490-E427-7BF4-D01198588F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE436837-F490-E427-7BF4-D01198588F94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31A6B950-4C2F-832D-B39B-2C0EAB4968E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31A6B950-4C2F-832D-B39B-2C0EAB4968E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31A6B950-4C2F-832D-B39B-2C0EAB4968E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31A6B950-4C2F-832D-B39B-2C0EAB4968E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {209E6DBA-E6E2-48C2-8E37-9F440EF74495}
+	EndGlobalSection
+EndGlobal
