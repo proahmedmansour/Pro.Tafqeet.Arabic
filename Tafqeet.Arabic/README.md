@@ -159,3 +159,7 @@ MIT License. See [LICENSE.txt](LICENSE.txt).
 - [NuGet Package](https://www.nuget.org/packages/Pro.Tafqeet.Arabic)
 - [GitHub Repository](https://github.com/proahmedmansour/Pro.Tafqeet.Arabic)
 - [Report Issues](https://github.com/proahmedmansour/Pro.Tafqeet.Arabic/issues)
+
+---
+
+_Made with ❤️ by Ahmed Mansour_
